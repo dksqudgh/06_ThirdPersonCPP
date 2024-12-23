@@ -11,5 +11,5 @@ class TPCPP_API ACGameMode : public AGameModeBase
 
 public:
 	ACGameMode();
-
+	
 };

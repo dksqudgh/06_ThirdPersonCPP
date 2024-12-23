@@ -19,17 +19,15 @@ ACPlayer::ACPlayer()
 		GetMesh()->SetSkeletalMesh(MeshAsset.Object);
 	}
 
-
 	ConstructorHelpers::FClassFinder<UAnimInstance> AnimClass(TEXT("/Game/Player/ABP_CPlayer"));
 	if (AnimClass.Succeeded())
 	{
-		GetAnimInstance()->GetAnimInstance(AnimClass.Class);
+		GetMesh()->SetAnimInstanceClass(AnimClass.Class);
 	}
-
 
 	GetMesh()->SetRelativeLocation(FVector(0, 0, -88));
 	GetMesh()->SetRelativeRotation(FRotator(0, -90, 0));
-
+	
 	//-> SpringArmComp
 	SpringArmComp->SetRelativeLocation(FVector(0, 0, 140));
 	SpringArmComp->SetRelativeRotation(FRotator(0, 90, 0));
@@ -40,13 +38,13 @@ ACPlayer::ACPlayer()
 void ACPlayer::BeginPlay()
 {
 	Super::BeginPlay();
-
+	
 }
 
 void ACPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
+	
 	PlayerInputComponent->BindAxis("MoveForward", this, &ACPlayer::OnMoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &ACPlayer::OnMoveRight);
 	PlayerInputComponent->BindAxis("Turn", this, &ACPlayer::OnTrun);

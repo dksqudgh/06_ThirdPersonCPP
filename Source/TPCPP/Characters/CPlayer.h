@@ -18,7 +18,7 @@ public:
 protected:
 	virtual void BeginPlay() override;
 
-public:
+public:	
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 private:
@@ -29,9 +29,9 @@ private:
 
 protected:
 	UPROPERTY(VisibleDefaultsOnly, Category = "Components")
-		USpringArmComponent* SpringArmComp;
+	USpringArmComponent* SpringArmComp;
 
 	UPROPERTY(VisibleDefaultsOnly, Category = "Components")
-		UCameraComponent* CameraComp;
+	UCameraComponent* CameraComp;
 
 };

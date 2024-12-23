@@ -10,7 +10,6 @@ enum class EWalkSpeedType : uint8
 	Sneak, Walk, Sprint, Max
 };
 
-
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class TPCPP_API UCAttributeComponent : public UActorComponent
 {
@@ -19,8 +18,7 @@ class TPCPP_API UCAttributeComponent : public UActorComponent
 public:	
 	UCAttributeComponent();
 
-
 private:
 	UPROPERTY(EditDefaultsOnly, Category = "WalkSpeed")
-		float WalkSpeeds[(int32)EWalkSpeedType::Max];
+	float WalkSpeeds[(int32)EWalkSpeedType::Max];
 };
