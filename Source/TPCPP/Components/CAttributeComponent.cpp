@@ -6,5 +6,7 @@ UCAttributeComponent::UCAttributeComponent()
 	WalkSpeeds[(int32)EWalkSpeedType::Walk] = 400.f;
 	WalkSpeeds[(int32)EWalkSpeedType::Sprint] = 600.f;
 
-	//Todo. 이동 기능은 내일...
+	RotationRate = FRotator(0, 720, 0);
+
+	bCanMove = true;
 }
