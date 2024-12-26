@@ -79,7 +79,7 @@ void ACPlayer::OnMoveForward(float Axis)
 	FRotator ControlRot = FRotator(0, GetControlRotation().Yaw, 0);
 	FVector Direction = FQuat(ControlRot).GetForwardVector().GetSafeNormal2D();
 
-	AddMovementInput(Dir, Axis);
+	AddMovementInput(Direction, Axis);
 }
 
 void ACPlayer::OnMoveRight(float Axis)
